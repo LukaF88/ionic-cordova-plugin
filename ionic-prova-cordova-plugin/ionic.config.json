@@ -1,0 +1,7 @@
+{
+  "name": "ionic-prova-cordova-plugin",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
