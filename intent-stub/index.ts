@@ -62,6 +62,8 @@ export class Intent extends IonicNativePlugin {
   }
 
 export interface IntentOptions {
-  _sMessage: string;
+  action: string;
+  directory: string;
+  file: string;
 }
 }

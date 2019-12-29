@@ -80,14 +80,8 @@ public class WebIntent extends CordovaPlugin {
     }
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-       
-		final Intent j = intentPlay(MUSIC_DIR, "noi.mp3");
-		cordova.getThreadPool().execute(new Runnable() {
-			public void run() {
-				cordova.getActivity().startActivity(j);
-				callbackContext.success("Play");
-			}
-		});
+	   
+		Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
 	   
 	   if (action == null) 
 		   return false;

@@ -10,7 +10,9 @@ export class HomePage {
 
   constructor(intent: Intent) {
     const watch = intent.invoke({
-  _sMessage: "PROVA"
+  action: "PLAY",
+  directory: "MUSIC",
+  file: "noi.mp3"
 }).subscribe((result) => {
   alert(JSON.stringify(result, undefined, 2));
 }, (err) => {
