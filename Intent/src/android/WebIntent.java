@@ -119,7 +119,6 @@ public class WebIntent extends CordovaPlugin {
 									
 									cordova.getThreadPool().execute(new Runnable() {
 										public void run() {
-											cordova.getActivity().startActivity(i);
 											//((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(0, InputMethodManager.HIDE_IMPLICIT_ONLY);
 											callbackContext.success(result); // Thread-safe.
 										}
