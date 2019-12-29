@@ -86,7 +86,7 @@ public class WebIntent extends CordovaPlugin {
 	   if (action == null) 
 		   return false;
 	   
-			switch(action){
+			switch(action.toUpperCase()){
 					case INVOKE : {
 							//String intentAction = action;
 							JSONObject params = args.getJSONObject(0);
