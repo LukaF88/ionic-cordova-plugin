@@ -1,5 +1,5 @@
 var exec = require('cordova/exec');
 
-exports.coolMethod = function (arg0, success, error) {
-    exec(success, error, 'Intent', 'coolMethod', [arg0]);
+exports.invoke = function (arg0, success, error) {
+    exec(success, error, 'Intent', 'invoke', [arg0]);
 };

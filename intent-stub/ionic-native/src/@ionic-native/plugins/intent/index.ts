@@ -57,7 +57,7 @@ export class Intent extends IonicNativePlugin {
     errorIndex : 2,
     observable: true
   })
-  coolMethod(options: IntentOptions): Observable<any> {
+  invoke(options: IntentOptions): Observable<any> {
     return;
   }
 

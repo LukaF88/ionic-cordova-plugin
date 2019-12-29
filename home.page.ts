@@ -9,7 +9,7 @@ import { Intent } from '@ionic-native/intent/ngx';
 export class HomePage {
 
   constructor(intent: Intent) {
-    const watch = intent.coolMethod({
+    const watch = intent.invoke({
   _sMessage: "PROVA"
 }).subscribe((result) => {
   alert(JSON.stringify(result, undefined, 2));
