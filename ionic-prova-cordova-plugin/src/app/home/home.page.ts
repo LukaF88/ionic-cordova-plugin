@@ -12,7 +12,7 @@ export class HomePage {
     const watch = intent.invoke({
   action: "PLAY",
   directory: "MUSIC",
-  file: "noi.mp3"
+  file: "eppure_sentire.mp3"
 }).subscribe((result) => {
   alert(JSON.stringify(result, undefined, 2));
 }, (err) => {
