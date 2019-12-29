@@ -61,7 +61,8 @@ public class WebIntent extends CordovaPlugin {
 	private static final String INVOKE = "INVOKE";
 	
 	// INTENT ACTION
-	private static final String PLAY = "PLAY"; // {directory, file, package}
+	private static final String PLAY = "PLAY"; // {directory, file}
+	private static final String PLAY = "LIS"; // {directory}
 
 	// FOLDERS
 	private static final String MUSIC_DIR = "MUSIC";
