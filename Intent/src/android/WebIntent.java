@@ -108,15 +108,15 @@ public class WebIntent extends CordovaPlugin {
 									JSONArray result = new JSONArray();
 									String directory = params.getString("directory");
 									String path = getFilePath(directory, null);
+									File directoryFile = new File(path);
 									Log.d("Files", "Path: " + path);
-									File[] files = directory.listFiles();
+									File[] files = directoryFile.listFiles();
 									Log.d("Files", "Size: " + files.length);
 									for (int i = 0; i < files.length; i++) {
 										Log.d("Files", "FileName:" + files[i].getName());
 										result.put(files[i].getName());
 									}
 									
-									Intent i = intentPlay(directory, file);
 									cordova.getThreadPool().execute(new Runnable() {
 										public void run() {
 											cordova.getActivity().startActivity(i);
