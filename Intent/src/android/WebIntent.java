@@ -81,7 +81,7 @@ public class WebIntent extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 	   
-		Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
+		//Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
 	   
 	   if (action == null) 
 		   return false;
@@ -100,6 +100,28 @@ public class WebIntent extends CordovaPlugin {
 											cordova.getActivity().startActivity(i);
 											//((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(0, InputMethodManager.HIDE_IMPLICIT_ONLY);
 											callbackContext.success(); // Thread-safe.
+										}
+									});
+									break;
+								}
+								case LIST: {
+									JSONArray result = new JSONArray();
+									String directory = params.getString("directory");
+									String path = getFilePath(directory, null);
+									Log.d("Files", "Path: " + path);
+									File[] files = directory.listFiles();
+									Log.d("Files", "Size: " + files.length);
+									for (int i = 0; i < files.length; i++) {
+										Log.d("Files", "FileName:" + files[i].getName());
+										result.put(files[i].getName());
+									}
+									
+									Intent i = intentPlay(directory, file);
+									cordova.getThreadPool().execute(new Runnable() {
+										public void run() {
+											cordova.getActivity().startActivity(i);
+											//((InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(0, InputMethodManager.HIDE_IMPLICIT_ONLY);
+											callbackContext.success(result); // Thread-safe.
 										}
 									});
 									break;
@@ -139,6 +161,8 @@ public class WebIntent extends CordovaPlugin {
     }
 	
 	private String getFilePath(String dir, String file){
+		if (file == null)
+			return getExternalStoragePublicDirectory(pathMap.get(dir)).toString;
 		return new File(getExternalStoragePublicDirectory(pathMap.get(dir)), file).getPath();
 	}
 

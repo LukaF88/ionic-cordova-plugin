@@ -8,6 +8,8 @@ cd ..
 cd ionic-prova-cordova-plugin
 ionic cordova plugin remove cordova-plugin-intent
 ionic cordova plugin add ../Intent
+
+ionic cordova plugin add cordova-plugin-android-permissions
 cd ..
 #read -p "Plugin installed..."
 
@@ -21,7 +23,9 @@ yes | cp -rf ../index.ts ../ionic-native/src/@ionic-native/plugins/intent/
 npm run build Intent
 cd ..
 cd ..
+
 cd ionic-prova-cordova-plugin
+npm install @ionic-native/android-permissions
 #npm install --save D:/workspaces/projects/prove/Intent/intent-stub/ionic-native/dist/@ionic-native/plugins/intent
 #read -p "Installato stub..."
 yes | cp -rf ../intent-stub/ionic-native/dist/@ionic-native/plugins/intent ./node_modules/@ionic-native
