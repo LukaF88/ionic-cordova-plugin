@@ -162,7 +162,7 @@ public class WebIntent extends CordovaPlugin {
 	
 	private String getFilePath(String dir, String file){
 		if (file == null)
-			return getExternalStoragePublicDirectory(pathMap.get(dir)).toString;
+			return getExternalStoragePublicDirectory(pathMap.get(dir)).toString();
 		return new File(getExternalStoragePublicDirectory(pathMap.get(dir)), file).getPath();
 	}
 
