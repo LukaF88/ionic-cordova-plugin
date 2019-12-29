@@ -62,7 +62,7 @@ public class WebIntent extends CordovaPlugin {
 	
 	// INTENT ACTION
 	private static final String PLAY = "PLAY"; // {directory, file}
-	private static final String PLAY = "LIST"; // {directory}
+	private static final String LIST = "LIST"; // {directory}
 
 	// FOLDERS
 	private static final String MUSIC_DIR = "MUSIC";
