@@ -40,6 +40,7 @@ import java.lang.reflect.Method;
 import android.os.StrictMode;
 import java.io.File;
 import android.os.Environment;
+import android.Manifest;
 
 // import additionally required classes for calculating screen height
 import android.view.Display;
@@ -82,7 +83,7 @@ public class WebIntent extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 	   
-		//Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
+		Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
 	   
 	   if (action == null) 
 		   return false;
