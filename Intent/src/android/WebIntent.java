@@ -83,8 +83,15 @@ public class WebIntent extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 	   
-		Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
-	   
+		//Toast.makeText(cordova.getActivity(), "Action: " + action, Toast.LENGTH_LONG).show();
+		/*public void playMedia(Uri file) {
+			Intent intent = new Intent(Intent.ACTION_VIEW);
+			intent.setData(file);
+			if (intent.resolveActivity(getPackageManager()) != null) {
+				startActivity(intent);
+			}
+		}*/
+
 	   if (action == null) 
 		   return false;
 	   

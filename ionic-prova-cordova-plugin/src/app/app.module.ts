@@ -10,15 +10,18 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Intent } from '@ionic-native/intent/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import {InstructionServiceService} from './instruction-service.service'
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
-	Intent,
+  Intent,
+  InstructionServiceService,
   AndroidPermissions,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
