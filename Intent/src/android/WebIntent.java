@@ -173,10 +173,4 @@ public class WebIntent extends CordovaPlugin {
 			return getExternalStoragePublicDirectory(pathMap.get(dir)).toString();
 		return new File(getExternalStoragePublicDirectory(pathMap.get(dir)), file).getPath();
 	}
-
-    @Override
-    public void onDestroy() {
-        rootView.getViewTreeObserver().removeOnGlobalLayoutListener(list);
-    }
-
 }

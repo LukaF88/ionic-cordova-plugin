@@ -19,7 +19,6 @@ export class InstructionServiceService {
  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
 }
   loadRules() {
-    alert("STO PER CHIAMARE");
     return this.http.get("http://compiletime.it/dist/index_cors.php", this.httpOptions);
     }
 

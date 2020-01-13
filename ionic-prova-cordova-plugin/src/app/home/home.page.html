@@ -7,8 +7,9 @@
 </ion-header>
 
 <ion-content>
-        
-        <ion-card text-center *ngFor="let opened=false; let i = index; let alarm of alarms" (click)="opened=!opened">
+        <ion-card text-center *ngFor="let opened=false; let i = index; let alarm of alarms" (click)="opened=!opened" ion-long-press
+  [interval]="400"
+  (pressed)="alert('Long')">
           <ion-item>
 
             <ion-icon name="alarm" slot="start"></ion-icon>
@@ -31,6 +32,8 @@
                 <h3>{{alarm.group}}</h3>
               </ion-text>
             </ion-label>
+
+
 
             <ion-icon name="play-circle" slot="end" (click)="playSong(alarm.playlist)" color="danger"></ion-icon>
 

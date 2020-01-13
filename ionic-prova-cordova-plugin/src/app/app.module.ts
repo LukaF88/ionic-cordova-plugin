@@ -13,17 +13,22 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import {InstructionServiceService} from './instruction-service.service'
 import { HttpClientModule} from '@angular/common/http';
 
+import { IonicStorageModule } from '@ionic/storage';
+import {IonicGestureConfig} from "./utils/IonicGestureConfig";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,  IonicModule.forRoot(),
+    IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
   Intent,
   InstructionServiceService,
   AndroidPermissions,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  IonicGestureConfig,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
 })
